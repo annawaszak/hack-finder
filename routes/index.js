@@ -1,7 +1,7 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-router.get("/", (req, res, next) => {
-  res.json("All good in here");
+router.get('/get-user', async (req, res, next) => {
+  res.json({ abc: 'abc' });
 });
 
 // You put the next routes here 👇
