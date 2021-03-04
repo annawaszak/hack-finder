@@ -8,19 +8,21 @@ export default class NavBar extends React.Component {
   render() {
 
     return (
-      <nav>
+      <nav className="flex justify-between bg-gray-900 p-4">
 
-        <Link to='/'>
-          <h1>Startup Calendar</h1>
+        <Link to='/' className="text-lg text-white">
+          Startup Calendar
         </Link>
 
-        <Link>
-          <h1>Sign Up</h1>
-        </Link>
+        <div className="flex text-lg text-white font-bold">
+          <Link className="mr-6">
+            Sign Up
+          </Link>
 
-        <Link>
-          <h1>Log In</h1>
-        </Link>
+          <Link>
+            Log In
+          </Link>
+        </div>
 
       </nav>
     )
