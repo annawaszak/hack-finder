@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default class NavBar extends React.Component {
 
+  // TO DO: Add state, login status?
+
   render() {
 
     return (
