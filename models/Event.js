@@ -16,7 +16,7 @@ const eventSchema = new Schema({
     type: String,
     trim: true,
   },
-  rewardTag: String,
+  rewardTag: [String],
   date: {
     type: Date,
     required: true,
@@ -27,8 +27,8 @@ const eventSchema = new Schema({
     city: String,
     zip: String,
   },
-  category: String,
-  industrie: String,
+  category: [String],
+  industrie: [String],
   image: {
     imgName: String,
     imgPath: String,
