@@ -40,26 +40,18 @@ export default class NavBar extends React.Component {
             </div>
 
 
-            <div id="logo-container" className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div id="left-container" className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex-shrink-0 flex items-center">
                 <img className="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
                 <img className="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
               </div>
-
-              {/* When a user is not logged in */}
-              {!this.state.loggedIn &&
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
-                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign up</a>
-                  </div>
-                </div>}
             </div>
+
+
 
             {/* When a user is logged in */}
             {this.state.loggedIn &&
-              <div id="profile-container" className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
+              <div id="right-container" className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   {/* <!-- Heroicon name: solid/check --> */}
                   <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -68,7 +60,7 @@ export default class NavBar extends React.Component {
                   Event
                 </button>
 
-                {/* <!-- Profile dropdown --> */}
+
                 <div className="ml-3 relative">
                   <div>
                     <button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-haspopup="true">
@@ -77,9 +69,22 @@ export default class NavBar extends React.Component {
                     </button>
                   </div>
                 </div>
+
               </div>
             }
 
+            {/* When a user is not logged in */}
+            {!this.state.loggedIn &&
+              <div id="right-container" className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+                <div className="hidden sm:block sm:ml-6">
+                  <div className="flex space-x-4">
+                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
+                    <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign up</a>
+                  </div>
+                </div>
+              </div>
+            }
 
           </div>
         </div>
